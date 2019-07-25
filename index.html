@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/singlecard.css">
+    <link rel="stylesheet" href="css/gamefield.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js" ></script>
+</head>
+
+<body>
+    
+    <div id="app">
+        <div class="instruction">
+            <h1>WELCOME TO FLIPPING CARD GAME:</h1>
+            <h2>Are you a fan of game: Arena of Valor??<br>
+                Let flip the cards to find which general behind 
+            </h2>
+            <h3>Choose each 02 cards to find the couple of cards that 
+                cover the same general.
+            </h3>
+            <h3>Refresh the page to replay the game</h3>
+        </div>
+        <gamefield id="gamefield"/>
+    </div>
+
+    
+</body>
+<script src="javascript/card-flipper.js" ></script>
+<script src="javascript/gamefield.js" ></script>
+</html>
+<script>
+    new Vue({
+        el: "#app" ,
+        components:["gamefield"],
+        
+    });
+</script>
