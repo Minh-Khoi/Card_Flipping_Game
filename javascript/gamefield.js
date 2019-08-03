@@ -19,10 +19,12 @@ Vue.component('gamefield', {
     components: ["singlecard"],
     data: function(){
         return{
-            nums_img: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            nums_img: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+                                '11', '12','13','14','15','16','17' ],
             clickedDOM: 0,
             clickedTime: 0,
             destroyed: 0,
+            startTime: new Date().getTime(),
             game: new CartFlipper(),
         }
     },
@@ -57,7 +59,8 @@ Vue.component('gamefield', {
                 }
             }
             if (this.destroyed==5) 
-                        alert("You win the game after "+ this.clickedTime + " clicked times");
+                        alert("You win the game after "+ this.clickedTime + " clicked times and "
+                                + 0.001*Math.round(new Date().getTime() - this.startTime) + " seconds");
         },
     },
     computed: {
@@ -88,7 +91,7 @@ function shuffle(arr) {
 function pickRandomly(arr){
     let a=[], array=[]
     while (a.length < 5){
-        const ranNum= Math.floor(Math.random() * 10);
+        const ranNum= Math.floor(Math.random() * 17);
         if(!a.includes(ranNum)) {
             array.push(arr[ranNum], arr[ranNum]);
             a.push(ranNum);
