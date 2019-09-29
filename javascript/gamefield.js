@@ -24,15 +24,16 @@ Vue.component('gamefield', {
             clickedDOM: 0,
             clickedTime: 0,
             destroyed: 0,
-            startTime: new Date().getTime(),
+            startTime: 0,//new Date().getTime(),
             game: new CartFlipper(),
         }
     },
     methods: {
         clickDOM: function(dom){
             // console.log("start playing");
+            this.startTime = (this.clickedTime==0) ? (new Date().getTime()) : this.startTime ;
             this.game.flip_front_to_back(dom);
-            console.log(this.clickedDOM);
+            console.log(new Date(this.startTime).toUTCString());
             this.clickedTime++;
             if(this.clickedDOM < 1) {
                 this.clickedDOM++;
@@ -59,8 +60,8 @@ Vue.component('gamefield', {
                 }
             }
             if (this.destroyed==5) 
-                        alert("You win the game after "+ this.clickedTime + " clicked times and "
-                                + 0.001*Math.round(new Date().getTime() - this.startTime) + " seconds");
+                alert("You win the game after "+ this.clickedTime + " clicked times and "
+                        + 0.001*Math.round(new Date().getTime() - this.startTime) + " seconds");
         },
     },
     computed: {
