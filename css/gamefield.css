@@ -1,8 +1,8 @@
 /* Game field */
 body{
-    background: url(../images/bg2.jpg) no-repeat fixed ;
+    /* background: url(../images/bg2.jpg) no-repeat fixed ;
     background-size: 150vmax 150%;
-    background-position: 40% 60%;
+    background-position: 40% 60%; */
 }
 .instruction{
     color: rgb(63, 63, 7);

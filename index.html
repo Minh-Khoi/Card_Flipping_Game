@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js" ></script>
 </head>
 
-<body>
+<body >
     
     <div id="app">
         <div class="instruction">
@@ -34,6 +34,22 @@
 <script src="javascript/gamefield.js" ></script>
 </html>
 <script>
+    function pickRandomlyBG(arr){
+        console.log(arr);
+        let a=[], array=[]
+        while (a.length < 1){
+            const ranNum= Math.floor(Math.random() * 2);
+            if(!a.includes(ranNum)) {
+                array.push(arr[ranNum], arr[ranNum]);
+                a.push(ranNum);
+            }
+        }
+        return shuffle(array);
+    };
+    document.body.style = 
+                    pickRandomlyBG(['background: url(./images/bg2.jpg) no-repeat fixed; background-size: 150vmax 150%; background-position: 40% 60%;',
+                                    'background: url(./images/bg.jpg) no-repeat fixed; background-size: 150vmax 150%; background-position: 80% 40%;']);
+
     new Vue({
         el: "#app" ,
         components:["gamefield"],

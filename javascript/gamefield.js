@@ -1,6 +1,6 @@
 Vue.component('gamefield', {
     template:`
-    <div id="gamefield">
+    <div id="gamefield" >
         <div class="cards" v-for="(link,index) in fileIMGlinks" :key="index" >
             <div class="flip-box singlecard" :id="index" 
                                @click="clickDOM($event.target.parentElement.parentElement)" >
